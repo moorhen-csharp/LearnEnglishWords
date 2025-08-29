@@ -1,5 +1,6 @@
 package com.example.learnenglishwords
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.LinearLayout
@@ -42,6 +43,11 @@ class MainActivity : AppCompatActivity() {
 
             btnSkip.setOnClickListener {
                 showNextQuestion(trainer)
+            }
+
+            btnOpenTest.setOnClickListener {
+                val intent = Intent(this@MainActivity, FIrstDemoActivity::class.java)
+                startActivity(intent)
             }
         }
 

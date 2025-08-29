@@ -7,6 +7,7 @@ import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import com.example.learnenglishwords.databinding.ActivityFirstDemoBinding
+import com.example.learnenglishwords.databinding.ActivityLearnWordBinding
 import kotlinx.parcelize.Parcelize
 import java.io.Serializable
 import javax.xml.transform.Source
@@ -20,6 +21,11 @@ class FIrstDemoActivity : AppCompatActivity() {
 
         binding = ActivityFirstDemoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.btnOpenMain.setOnClickListener {
+            val intent = Intent(this@FIrstDemoActivity, ActivityLearnWordBinding::class.java)
+            startActivity(intent)
+        }
 
         val word = ExtraWord(
             "galaxy",
